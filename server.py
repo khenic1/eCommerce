@@ -9,7 +9,9 @@ app.secret_key = '194562354'
 def index():
     return render_template('index.html')
 
-
+@app.route('/admin')
+def admin_login():
+    return render_template('admin.html')
 
 
 
