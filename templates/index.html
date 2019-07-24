@@ -1,15 +1,69 @@
 {% extends "master.html" %}
 
-{% block title %}Product Page
-{% endblock %}
+{% block title %}Product Page{% endblock %}
 
 {% block content %}
 <div class="container">
-   
-        <img src="{{ url_for('static', filename='img/71WrW4r2NEL._SX466_.jpg') }}">
+        <div class="header" style="background-color: darkgray; color:aliceblue">
+                <div class="row align-item-center">
+                        <div class="col text-center">
+                                <h3>Tennis Heaven</h3>
+                        </div>
+                        <div class="col text-center">
+                                <h5>Shopping Cart(25)</h5>
+                        </div>
+                </div>
+        </div>
+        <div class="row mt-3">
+                <div class="col-4">
+                        <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                        <input type="search" placeholder="Product Name">
+                                        <h5 class="card-title mt-3">Categories</h5>
+                                        <div class="list-group">
+                                                <a href="#" class="list-group-item list-group-item-action">T-shirts</a>
+                                                <a href="#" class="list-group-item list-group-item-action">Shoes</a>
+                                                <a href="#" class="list-group-item list-group-item-action">Racquets</a>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+                <div class="col-8">
+                        <div class="card">
+                                <div class="card-header">
+                                        <h4>Racquets</h4>
+                                        <select class="card-header text-right" name="sorted_by">
+                                                <option value="price">Price</option>
+                                                <option value="popular">Most Popular</option>
+                                        </select>
+                                </div>
+                                <div class="card-body">
+                                        {% for racquet in racquets %}
+                                        {% set image='img/'+racquet+'.jpg' %}
+                                        <img src="{{url_for('static', filename=image)}}" alt="..." class="img-thumbnail" style="width:200px;height: 200px;">
+                                        {%endfor%}
+                                </div>
+                                <div class="card-footer text-muted">
+                                        1|2|3
+                                </div>
+                        </div>
+                </div>
+
+
+
+
+              </div>
+
+                
+        </div>
+
+
+
+      </div>
+</div>              
 
 
   
    
-</div>
+
 {% endblock%}
