@@ -5,9 +5,14 @@ from mysqlconn import connectToMySQL
 app = Flask(__name__)
 bcrypt = Bcrypt(app)   
 app.secret_key = '194562354'
+
+racquets = ['prince_racquet', 'head_racquet','wilson_racquet', 'babolat_racquet']
+
+
+
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', racquets=racquets)
 
 
 
